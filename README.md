@@ -19,6 +19,6 @@ WirelessIoT Final Project
        執行Attendance Project.py
        偵測到人臉時紀錄名字及時間(csv)
        不會重複紀錄(可調整)
-       (需更改為.json)
+       (稍後更改為.json輸出)
       
       
