@@ -1,6 +1,12 @@
 # WIoTApi
 ## Overview
 docker MySQL, phpMyadmin and database Api
+### Port
+```
+MySQL       3306
+phpMyadmin  8080
+api server  5000
+
 ## Step
 ### Step 1.
 ```
