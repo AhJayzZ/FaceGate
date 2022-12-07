@@ -6,6 +6,7 @@ docker MySQL, phpMyadmin and database Api
 MySQL       3306
 phpMyadmin  8080
 api server  5000
+```
 
 ## Step
 ### Step 1.
