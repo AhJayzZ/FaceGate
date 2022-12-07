@@ -6,15 +6,15 @@ docker MySQL, phpMyadmin and database Api
 ```
 sudo apt-get update
 sudo apt-get install -y docker.io
+# 如果使用root install就不需要執行以下兩行
 sudo usermod -aG docker username
 sudo reboot
 ```
 重新登入後 docker version確認 docker 是否裝好
 ### Step 2.
  ```
- git clone https://github.com/tony11105/WIoTApi.git
+ git clone https://github.com/AhJayzZ/WirelessIoT.git
  cd WioTApi
- cd shell
  ./build_docker.sh
  ```
  執行完後確認MySQL跟phpMyadmin的container是否啟動，到瀏覽器輸入ip登入phpMyadmin，預設帳號密碼為root:root。
@@ -25,3 +25,4 @@ sudo reboot
  ./build_apiSvc.sh
  ```
 檢查是否啟動
+將swagger.yaml用openapi套件開啟即可確認API
