@@ -1,0 +1,116 @@
+openapi: 3.0.0
+servers:
+
+  - description: item Sample App
+    url: http://localhost:5000/
+info:
+  description: This is a simple API
+  version: "1.0.0"
+  title: Simple item API
+  contact:
+    email: you@your-company.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+paths:
+  /api/item/getalldate:
+    get:
+      tags:
+        - item
+      summary: searches item
+      operationId: view.get
+      description: |
+        By passing in the appropriate options, you can search for
+        available item in the system
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/itemItem'
+        '400':
+          description: bad input parameter
+          
+  /api/item/create:
+    post:
+      tags:
+        - item
+      summary: adds a person state in_time and out_time
+      operationId: view.post
+      description: Adds a person data to the system
+      responses:
+        '201':
+          description: item created
+        '400':
+          description: 'invalid input, object invalid'
+        '409':
+          description: an existing item already exists
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/itemItem'
+        description: adds a person state in_time and out_time
+  
+  /api/item/read/{name}:
+    get:
+      tags:
+        - item
+      summary: searches item
+      operationId: view.read_name_list
+      description: |
+        By passing in the appropriate options, you can search for
+        available item in the system
+      parameters:
+        - name: name
+          in: path
+          description: item name
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/itemItem'
+        '400':
+          description: bad input parameter
+  /api/item/update/{name}:
+    put:
+      operationId: view.put
+      tags:
+        - item
+      summary: Update a item in the people list
+      description: Update a item in the items list
+      parameters:
+        - name: name
+          in: path
+          description: item name
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successfully updated a item in items list
+
+components:
+  schemas:
+    itemItem:
+      type: object
+      properties:
+        name:
+          type: string
+        state:
+          type: string
+        in_time:
+          type: string
+        out_time:
+          type: string
+        
