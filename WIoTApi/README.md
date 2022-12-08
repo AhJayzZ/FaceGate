@@ -33,3 +33,10 @@ sudo reboot
  ```
 檢查是否啟動
 將swagger.yaml用openapi套件開啟即可確認API
+
+### Step 4.
+使用ngrok 測試API。下載ngrok並照官網步驟安裝。
+```
+# 啟動ngrok
+ngrok http --scheme=http 5000 --host-header=localhost:5000
+```
