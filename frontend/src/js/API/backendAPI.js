@@ -1,10 +1,14 @@
 import axios from "axios";
 
-const API = 'http://127.0.0.1:8000/api/';
+const API_ROOT = process.env.REACT_APP_NGORK_URL
+const GET_URL = API_ROOT + "/api/item/getalldate"
+const READ_URL = API_ROOT + "/api/item/read/"
+const POST_URL = API_ROOT  + "/api/item/create"
+const PUT_URL = API_ROOT + "/api/item/update/"
 
 const getData = async() => {
     try{
-        const res = await axios.get(API);
+        const res = await axios.get(GET_URL);
         return res
     }
     catch (error){
@@ -13,9 +17,9 @@ const getData = async() => {
     }
 }
 
-const getDataById = async(id) => {
+const getDataByName = async(id) => {
     try{
-        const res = await axios.get(API + String(id));
+        const res = await axios.get(READ_URL + String(id));
         return res
     }
     catch (error){
@@ -26,7 +30,8 @@ const getDataById = async(id) => {
 
 const postData = async(data) => {
     try{
-        const res = await axios.post(API,data);
+
+        const res = await axios.post(POST_URL,data);
         return res
     }
     catch (error) {
@@ -37,18 +42,7 @@ const postData = async(data) => {
 
 const putData = async(data) => {
     try{
-        const res = await axios.put(API,data);
-        return res
-    }
-    catch (error) {
-        console.log(error);
-        return error
-    }
-}
-
-const deleteData = async(id) => {
-    try{
-        const res = await axios.delete(API + String(id));
+        const res = await axios.put(PUT_URL,data);
         return res
     }
     catch (error) {
@@ -59,8 +53,7 @@ const deleteData = async(id) => {
 
 export {
     getData,
-    getDataById,
+    getDataByName,
     postData,
-    putData,
-    deleteData
+    putData
 }

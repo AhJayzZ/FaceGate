@@ -1,6 +1,5 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/esm/Button';
 import { useEffect, useState } from 'react';
 
 import * as API from './API/backendAPI';
@@ -9,16 +8,15 @@ function Info() {
   const [data,setData] = useState([]);
   const [update,setUpdate] = useState(false);
 
-
   const fetchData = async() => {
     const res = await API.getData()
+    console.log(res)
     setData(res.data);
   }
-  
-  const deleteData = async(id) => {
-      await API.deleteData(id);
-      setUpdate(update => !update);
-  }
+
+  useEffect(() => {
+    setInterval(() => setUpdate(update => !update),5000)
+  },[])
 
   useEffect(() => {
     fetchData();
@@ -35,14 +33,11 @@ function Info() {
             <Col>刪除資料</Col>
         </Row>
         {data.map(item => (
-          <Row className="fw-bold bg-light" key={item.id}>
+          <Row className="fw-bold bg-light text-center" key={item.id}>
               <Col className="border">{item.name}</Col>
-              <Col className="border">{item.status}</Col>
-              <Col className="border">{item.entryTime}</Col>
-              <Col className="border">{item.departureTime}</Col>
-              <Col className="border text-center">
-                <Button variant='danger' onClick={ ()=> deleteData(item.id)}>刪除</Button>
-              </Col>
+              <Col className="border">{item.state}</Col>
+              <Col className="border">{item.in_time}</Col>
+              <Col className="border">{item.out_time}</Col>
           </Row>
         ))}
       </div>
