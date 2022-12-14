@@ -8,6 +8,7 @@ const PUT_URL = API_ROOT + "/api/item/update/"
 
 const getData = async() => {
     try{
+        console.log(API_ROOT,GET_URL)
         const res = await axios.get(GET_URL);
         return res
     }

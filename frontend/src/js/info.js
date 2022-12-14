@@ -10,12 +10,12 @@ function Info() {
 
   const fetchData = async() => {
     const res = await API.getData()
-    console.log(res)
     setData(res.data);
   }
 
   useEffect(() => {
-    setInterval(() => setUpdate(update => !update),5000)
+    const updateInterval = setInterval(() => setUpdate(update => !update),3000)
+    return () => clearInterval(updateInterval)
   },[])
 
   useEffect(() => {
@@ -30,7 +30,6 @@ function Info() {
             <Col>狀態</Col>
             <Col>進入時間</Col>
             <Col>離開時間</Col>
-            <Col>刪除資料</Col>
         </Row>
         {data.map(item => (
           <Row className="fw-bold bg-light text-center" key={item.id}>
