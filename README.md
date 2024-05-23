@@ -17,7 +17,8 @@
 
 ---
 ## 展示影片 Demo
-[![FaceGate Demo Video](http://img.youtube.com/vi/PMHbNJoS0gE/0.jpg)](http://www.youtube.com/watch?v=PMHbNJoS0gE "FaceGate")
+https://github.com/AhJayzZ/FaceGate/assets/61458156/bec53321-3010-4554-ba26-f9085be18bb1
+
 ---
 ## 系統設計 System Design
 - ### 架構圖 Architeture
