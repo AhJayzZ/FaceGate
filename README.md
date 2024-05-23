@@ -17,7 +17,7 @@
 
 ---
 ## 展示影片 Demo
-https://github.com/AhJayzZ/FaceGate/assets/61458156/bec53321-3010-4554-ba26-f9085be18bb1
+https://github.com/AhJayzZ/FaceGate/assets/61458156/afc228e0-e1fd-47ce-9a90-a6d35e4a90f6
 
 ---
 ## 系統設計 System Design
